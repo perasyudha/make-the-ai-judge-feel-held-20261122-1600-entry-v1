@@ -5,4 +5,5 @@ const TEXT =
 
 const out = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(out, { recursive: true });
+if ([...TEXT].length === 0 || [...TEXT].length > 280) throw new Error("entry.txt gate");
 writeFileSync(`${out}/entry.txt`, TEXT, "utf8");
